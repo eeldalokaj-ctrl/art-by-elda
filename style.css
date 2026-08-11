@@ -8,3 +8,20 @@ h1 {
     font-family: "Allura", cursive;
     color: #316c72;
 }
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+}
+
+.artwork {
+    min-width: 100%;
+    scroll-snap-align: center;
+    text-align: center;
+}
+
+.artwork img {
+    max-width: 90%;
+    height: auto;
+}
