@@ -7,21 +7,23 @@ h1 {
     font-size: 60px;
     font-family: "Allura", cursive;
     color: #316c72;
-}
-.gallery {
+}.gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 20px;
+    width: 100%;
 }
 
 .artwork {
-    min-width: 100%;
+    flex: 0 0 100%;
     scroll-snap-align: center;
     text-align: center;
 }
 
 .artwork img {
-    max-width: 90%;
+    width: 300px;
+    max-width: 85%;
     height: auto;
+    object-fit: contain;
 }
