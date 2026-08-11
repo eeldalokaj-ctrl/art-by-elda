@@ -9,138 +9,232 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Allura font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
-        <h1>Art by Elda</h1>
-
-        <p>Piktura, vizatime dhe punime të personalizuara.</p>
+    <header class="hero">
 
         <nav>
-            <a href="#punimet">Punimet</a>
-            <a href="#rreth-meje">Rreth meje</a>
-            <a href="#porosi">Porosi</a>
-            <a href="#kontakti">Kontakti</a>
+            <a href="#punimet">WORK</a>
+            <a href="#rreth-meje">ABOUT</a>
+            <a href="#porosi">COMMISSIONS</a>
+            <a href="#kontakti">CONTACT</a>
         </nav>
+
+        <div class="hero-content">
+
+            <p class="small-label">PAINTINGS · DRAWINGS · CUSTOM ART</p>
+
+            <h1>Art by Elda</h1>
+
+            <p class="hero-text">
+                Art made with feeling,<br>
+                one piece at a time.
+            </p>
+
+            <a class="explore-button" href="#punimet">
+                EXPLORE MY WORK ↓
+            </a>
+
+        </div>
+
     </header>
 
 
     <main>
 
-        <section id="punimet">
+        <section id="punimet" class="work-section">
 
-            <h2>Punimet 🎨</h2>
+            <div class="section-heading">
 
-            <p>Këtu do të gjeni pikturat dhe vizatimet e mia.</p>
+                <p class="small-label">SELECTED WORKS</p>
+
+                <h2>My Gallery</h2>
+
+                <p>
+                    A collection of paintings and drawings created by me.
+                </p>
+
+            </div>
+
 
             <div class="gallery">
 
-                <div class="artwork">
-                    <img src="IMG_9828.jpeg" alt="Pikturë e Eldës">
 
-                    <h3>Artwork 01</h3>
-                    <p class="price">€120</p>
+                <!-- ARTWORK 01 -->
 
-                    <a
-                        class="buy-button"
-                        href="https://www.instagram.com/artbyelda/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        BLEJ
-                    </a>
-                </div>
+                <article class="artwork">
 
+                    <div class="art-image">
+                        <img src="IMG_9828.jpeg" alt="Artwork by Elda">
+                    </div>
 
-                <div class="artwork">
-                    <img src="IMG_8286.jpeg" alt="Pikturë e Eldës">
+                    <div class="art-info">
 
-                    <h3>Artwork 02</h3>
-                    <p class="price">€60</p>
+                        <div>
+                            <p class="art-number">01 / 03</p>
+                            <h3>Artwork 01</h3>
+                        </div>
 
-                    <a
-                        class="buy-button"
-                        href="https://www.instagram.com/artbyelda/"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        BLEJ
-                    </a>
-                </div>
+                        <div class="price">
+                            €120
+                        </div>
 
-
-                <div class="artwork">
-                    <img src="IMG_8930.jpeg" alt="Pikturë e Eldës">
-
-                    <h3>Artwork 03</h3>
-                    <p class="price">€90</p>
+                    </div>
 
                     <a
-                        class="buy-button"
-                        href="https://www.instagram.com/artbyelda/"
+                        class="inquire"
+                        href="https://ig.me/m/artbyelda"
                         target="_blank"
                         rel="noopener noreferrer">
-                        BLEJ
+                        INQUIRE ABOUT THIS PIECE →
                     </a>
-                </div>
+
+                </article>
+
+
+                <!-- ARTWORK 02 -->
+
+                <article class="artwork">
+
+                    <div class="art-image">
+                        <img src="IMG_8286.jpeg" alt="Artwork by Elda">
+                    </div>
+
+                    <div class="art-info">
+
+                        <div>
+                            <p class="art-number">02 / 03</p>
+                            <h3>Artwork 02</h3>
+                        </div>
+
+                        <div class="price">
+                            €60
+                        </div>
+
+                    </div>
+
+                    <a
+                        class="inquire"
+                        href="https://ig.me/m/artbyelda"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        INQUIRE ABOUT THIS PIECE →
+                    </a>
+
+                </article>
+
+
+                <!-- ARTWORK 03 -->
+
+                <article class="artwork">
+
+                    <div class="art-image">
+                        <img src="IMG_8930.jpeg" alt="Artwork by Elda">
+                    </div>
+
+                    <div class="art-info">
+
+                        <div>
+                            <p class="art-number">03 / 03</p>
+                            <h3>Artwork 03</h3>
+                        </div>
+
+                        <div class="price">
+                            €90
+                        </div>
+
+                    </div>
+
+                    <a
+                        class="inquire"
+                        href="https://ig.me/m/artbyelda"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        INQUIRE ABOUT THIS PIECE →
+                    </a>
+
+                </article>
+
 
             </div>
 
-            <div class="dots">
-                <span>●</span>
-                <span>○</span>
-                <span>○</span>
+            <div class="swipe-hint">
+                ← SWIPE TO EXPLORE →
             </div>
 
         </section>
 
 
-        <section id="rreth-meje">
+        <section id="rreth-meje" class="about-section">
 
-            <h2>Rreth meje</h2>
+            <div class="about-label">
+                <p class="small-label">01 — ABOUT</p>
+            </div>
 
-            <p>
-                Unë jam Elda, artiste e re nga Kosova.
-                Krijoj piktura, vizatime dhe punime të personalizuara.
-            </p>
+            <div class="about-content">
+
+                <h2>
+                    Creating is<br>
+                    <span>where I belong.</span>
+                </h2>
+
+                <p>
+                    I’m Elda, a young artist from Kosovo.
+                    Through painting and drawing, I explore
+                    emotions, people and the little details
+                    that make us feel something.
+                </p>
+
+                <p>
+                    Every piece is created by hand and with
+                    intention — whether it is a personal
+                    artwork or something made especially for you.
+                </p>
+
+            </div>
 
         </section>
 
 
-        <section id="porosi">
+        <section id="porosi" class="commission-section">
 
-            <h2>Porosi</h2>
+            <p class="small-label">02 — COMMISSIONS</p>
+
+            <h2>
+                Have something<br>
+                <span>in mind?</span>
+            </h2>
 
             <p>
-                Dëshiron një punim të personalizuar?
-                Më kontakto në Instagram për të diskutuar idenë tënde.
+                Tell me your idea and let's turn it
+                into something you can keep forever.
             </p>
 
             <a
-                class="instagram-button"
-                href="https://www.instagram.com/artbyelda/"
+                class="main-button"
+                href="https://ig.me/m/artbyelda"
                 target="_blank"
                 rel="noopener noreferrer">
-                Më kontakto në Instagram
+                REQUEST A COMMISSION →
             </a>
 
         </section>
 
 
-        <section id="kontakti">
+        <section id="kontakti" class="contact-section">
 
-            <h2>Kontakti</h2>
+            <p class="small-label">03 — LET'S TALK</p>
 
-            <p>
-                Për porosi dhe pyetje më gjeni në Instagram:
-            </p>
+            <h2>Let's create<br><span>something beautiful.</span></h2>
 
             <a
-                class="instagram-link"
+                class="instagram"
                 href="https://www.instagram.com/artbyelda/"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -153,7 +247,17 @@
 
 
     <footer>
-        <p>© 2026 Art by Elda</p>
+
+        <div>
+            ART BY ELDA
+        </div>
+
+        <p>© 2026 Elda Lokaj</p>
+
+        <a href="https://www.instagram.com/artbyelda/" target="_blank">
+            INSTAGRAM ↗
+        </a>
+
     </footer>
 
 </body>
