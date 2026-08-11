@@ -1,29 +1,216 @@
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    margin: 0;
     background-color: #dbeafe;
+    color: #315c72;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+/* HEADER */
+
+header {
+    padding: 40px 20px 25px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 60px;
+    margin: 0;
+    font-size: 70px;
     font-family: "Allura", cursive;
     color: #316c72;
-}.gallery {
+}
+
+header p {
+    font-size: 18px;
+}
+
+
+/* NAVIGATION */
+
+nav {
+    margin-top: 25px;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #315c72;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* SECTIONS */
+
+section {
+    padding: 45px 20px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+section > p {
+    margin-bottom: 30px;
+}
+
+
+/* ART GALLERY */
+
+.gallery {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+
     gap: 20px;
+
     width: 100%;
+    padding: 10px 0 25px;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
 }
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* EACH ARTWORK */
 
 .artwork {
     flex: 0 0 100%;
+
     scroll-snap-align: center;
-    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
 }
 
+
+/* ART IMAGE */
+
 .artwork img {
+    display: block;
+
     width: auto;
     max-width: 85%;
-    max-height: 400px;
-    height: auto;
+    max-height: 420px;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+}
+
+
+/* ART TITLE */
+
+.artwork h3 {
+    margin: 18px 0 5px;
+
+    font-size: 20px;
+}
+
+
+/* PRICE */
+
+.price {
+    margin: 0 0 15px;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    color: #315c72;
+}
+
+
+/* BUY BUTTON */
+
+.buy-button {
+    display: inline-block;
+
+    padding: 12px 30px;
+
+    background-color: #315c72;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.buy-button:hover {
+    transform: scale(1.05);
+}
+
+
+/* DOTS */
+
+.dots {
+    margin-top: 5px;
+
+    font-size: 18px;
+    letter-spacing: 8px;
+}
+
+.dots span {
+    color: #315c72;
+}
+
+
+/* INSTAGRAM */
+
+.instagram-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background-color: #315c72;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+}
+
+.instagram-link {
+    color: #315c72;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+
+    font-size: 14px;
 }
