@@ -22,8 +22,8 @@ h1 {
 }
 
 .artwork img {
-    width: 300px;
+    width: auto;
     max-width: 85%;
+    max-height: 400px;
     height: auto;
-    object-fit: contain;
 }
