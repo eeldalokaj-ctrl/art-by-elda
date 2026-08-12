@@ -55,7 +55,7 @@ function openArt(card) {
 
     const title = card.querySelector("h3").textContent;
 
-    const price = card.querySelector(".card-info span").textContent;
+    const price = card.querySelector(".sale-price").textContent;
 
 
     document.getElementById("lightboxImage").src = image.src;
