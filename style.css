@@ -41,7 +41,7 @@ body {
     color: #315c72;
     text-decoration: none;
 
-    font-family: "Allura", bold;
+    font-family: "Allura", cursive;
     font-size: 34px;
 }
 
@@ -111,7 +111,7 @@ nav a {
 h1 {
     margin: 0;
 
-    font-family: "Allura", cursive;
+    font-family: "Allura", bold;
     font-weight: 400;
 
     font-size: clamp(90px, 16vw, 180px);
