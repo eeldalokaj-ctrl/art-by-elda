@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sq">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,12 +19,13 @@
 <header class="hero">
 
     <div class="topbar">
-        <a class="brand" href="#">Art by Elda</a>
+
+        <a class="brand" href="#top">Art by Elda</a>
 
         <nav>
-            <a href="#works">Punimet</a>
-            <a href="#about">Rreth meje</a>
-            <a href="#contact">Kontakt</a>
+            <a href="#works" data-sq="Punimet" data-en="Works">Punimet</a>
+            <a href="#about" data-sq="Rreth meje" data-en="About">Rreth meje</a>
+            <a href="#contact" data-sq="Kontakt" data-en="Contact">Kontakt</a>
         </nav>
 
         <div class="language">
@@ -31,21 +33,26 @@
             <span>/</span>
             <button id="en">EN</button>
         </div>
+
     </div>
 
-    <div class="hero-content">
 
-        <p data-sq="Piktura · Vizatime · Art i personalizuar"
-           data-en="Paintings · Drawings · Custom art">
+    <div class="hero-content" id="top">
+
+        <p
+            data-sq="Piktura · Vizatime · Art i personalizuar"
+            data-en="Paintings · Drawings · Custom art">
             Piktura · Vizatime · Art i personalizuar
         </p>
 
         <h1>Art by Elda</h1>
 
-        <a href="#works" class="discover"
-           data-sq="Shiko punimet ↓"
-           data-en="Explore the work ↓">
-            Shiko punimet ↓
+        <a
+            href="#custom"
+            class="discover"
+            data-sq="Zbulo më shumë ↓"
+            data-en="Discover more ↓">
+            Zbulo më shumë ↓
         </a>
 
     </div>
@@ -55,17 +62,74 @@
 
 <main>
 
+<!-- CUSTOM ART — LART -->
+
+<section id="custom" class="custom">
+
+    <div class="custom-inner">
+
+        <p
+            class="small-title"
+            data-sq="Punime të personalizuara"
+            data-en="Custom artwork">
+            Punime të personalizuara
+        </p>
+
+        <h2>
+            <span
+                data-sq="Ke një ide?"
+                data-en="Have an idea?">
+                Ke një ide?
+            </span>
+
+            <br>
+
+            <em
+                data-sq="Ta krijojmë."
+                data-en="Let's create it.">
+                Ta krijojmë.
+            </em>
+        </h2>
+
+        <p
+            class="custom-text"
+            data-sq="Më trego çfarë ke në mendje dhe krijojmë bashkë një punim që është vetëm i yti."
+            data-en="Tell me what you have in mind and let's create something that is completely yours.">
+            Më trego çfarë ke në mendje dhe krijojmë bashkë një punim që është vetëm i yti.
+        </p>
+
+        <a
+            href="https://ig.me/m/artbyelda"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-button"
+            data-sq="Më shkruaj në Instagram →"
+            data-en="Message me on Instagram →">
+            Më shkruaj në Instagram →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- WORKS -->
+
 <section id="works" class="works">
 
     <div class="works-heading">
 
-        <span data-sq="Punimet e mia" data-en="My work">
+        <p
+            class="small-title"
+            data-sq="Punimet e mia"
+            data-en="My work">
             Punimet e mia
-        </span>
+        </p>
 
-        <h2 data-sq="Zgjedhja ime"
+        <h2
+            data-sq="Një përzgjedhje"
             data-en="A selection">
-            Zgjedhja ime
+            Një përzgjedhje
         </h2>
 
     </div>
@@ -74,46 +138,151 @@
     <div class="gallery">
 
 
-        <article class="art-card" onclick="openArt(this)">
+        <!-- ARTWORK 1 -->
 
-            <div class="image-wrap">
-                <img src="IMG_9828.jpeg" alt="Artwork by Elda">
+        <article class="art-card">
+
+            <div
+                class="image-wrap"
+                onclick="openArt(this.parentElement)">
+
+                <img
+                    src="IMG_9828.jpeg"
+                    alt="Artwork 01">
+
+                <div class="view">
+                    <span
+                        data-sq="Shiko"
+                        data-en="View">
+                        Shiko
+                    </span>
+                </div>
+
             </div>
 
             <div class="card-info">
-                <h3>Artwork 01</h3>
-                <span>€120</span>
+
+                <div>
+                    <h3>Artwork 01</h3>
+                    <span>€120</span>
+                </div>
+
+                <a
+                    href="https://ig.me/m/artbyelda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inquire"
+                    onclick="setArtwork('Artwork 01', '€120')"
+                    data-sq="Pyet →"
+                    data-en="Inquire →">
+                    Pyet →
+                </a>
+
             </div>
 
         </article>
 
 
-        <article class="art-card" onclick="openArt(this)">
+        <!-- ARTWORK 2 -->
 
-            <div class="image-wrap">
-                <img src="IMG_8286.jpeg" alt="Artwork by Elda">
+        <article class="art-card">
+
+            <div
+                class="image-wrap"
+                onclick="openArt(this.parentElement)">
+
+                <img
+                    src="IMG_8286.jpeg"
+                    alt="Artwork 02">
+
+                <div class="view">
+                    <span
+                        data-sq="Shiko"
+                        data-en="View">
+                        Shiko
+                    </span>
+                </div>
+
             </div>
 
             <div class="card-info">
-                <h3>Artwork 02</h3>
-                <span>€60</span>
+
+                <div>
+                    <h3>Artwork 02</h3>
+                    <span>€60</span>
+                </div>
+
+                <a
+                    href="https://ig.me/m/artbyelda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inquire"
+                    onclick="setArtwork('Artwork 02', '€60')"
+                    data-sq="Pyet →"
+                    data-en="Inquire →">
+                    Pyet →
+                </a>
+
             </div>
 
         </article>
 
 
-        <article class="art-card" onclick="openArt(this)">
+        <!-- ARTWORK 3 -->
 
-            <div class="image-wrap">
-                <img src="IMG_8930.jpeg" alt="Artwork by Elda">
+        <article class="art-card">
+
+            <div
+                class="image-wrap"
+                onclick="openArt(this.parentElement)">
+
+                <img
+                    src="IMG_8930.jpeg"
+                    alt="Artwork 03">
+
+                <div class="view">
+                    <span
+                        data-sq="Shiko"
+                        data-en="View">
+                        Shiko
+                    </span>
+                </div>
+
             </div>
 
             <div class="card-info">
-                <h3>Artwork 03</h3>
-                <span>€90</span>
+
+                <div>
+                    <h3>Artwork 03</h3>
+                    <span>€90</span>
+                </div>
+
+                <a
+                    href="https://ig.me/m/artbyelda"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inquire"
+                    onclick="setArtwork('Artwork 03', '€90')"
+                    data-sq="Pyet →"
+                    data-en="Inquire →">
+                    Pyet →
+                </a>
+
             </div>
 
         </article>
+
+
+        <!--
+        PËR ARTWORK TË RI:
+
+        Kopjo një <article class="art-card">
+        dhe ndrysho vetëm:
+        1. emrin e fotos
+        2. Artwork 04
+        3. çmimin
+        4. setArtwork(...)
+        -->
 
 
     </div>
@@ -121,32 +290,46 @@
 </section>
 
 
+<!-- ABOUT -->
+
 <section id="about" class="about">
 
-    <p class="small-title"
-       data-sq="Rreth meje"
-       data-en="About me">
-        Rreth meje
-    </p>
+    <div class="about-label">
+
+        <p
+            class="small-title"
+            data-sq="Rreth meje"
+            data-en="About me">
+            Rreth meje
+        </p>
+
+    </div>
+
 
     <div>
 
         <h2>
-            <span data-sq="Unë jam Elda,"
-                  data-en="I'm Elda,">
+
+            <span
+                data-sq="Unë jam Elda,"
+                data-en="I'm Elda,">
                 Unë jam Elda,
             </span>
 
             <br>
 
-            <em data-sq="artiste nga Kosova."
+            <em
+                data-sq="artiste nga Kosova."
                 data-en="an artist from Kosovo.">
                 artiste nga Kosova.
             </em>
+
         </h2>
 
-        <p data-sq="Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente."
-           data-en="I create paintings, drawings and custom pieces. For me, art is a way to tell stories and preserve moments.">
+
+        <p
+            data-sq="Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente."
+            data-en="I create paintings, drawings and custom pieces. For me, art is a way to tell stories and preserve moments.">
             Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente.
         </p>
 
@@ -155,56 +338,23 @@
 </section>
 
 
-<section class="commission">
-
-    <p class="small-title"
-       data-sq="Punim i personalizuar"
-       data-en="Custom artwork">
-        Punim i personalizuar
-    </p>
-
-    <h2>
-        <span data-sq="Ke një ide?"
-              data-en="Have an idea?">
-            Ke një ide?
-        </span>
-
-        <br>
-
-        <em data-sq="Ta krijojmë."
-            data-en="Let's create it.">
-            Ta krijojmë.
-        </em>
-    </h2>
-
-    <a href="https://ig.me/m/artbyelda"
-       target="_blank"
-       class="instagram-button"
-       data-sq="Më shkruaj në Instagram →"
-       data-en="Message me on Instagram →">
-        Më shkruaj në Instagram →
-    </a>
-
-</section>
-
+<!-- CONTACT -->
 
 <section id="contact" class="contact">
 
-    <p class="small-title"
-       data-sq="Kontakt"
-       data-en="Contact">
-        Kontakt
+    <p
+        class="small-title"
+        data-sq="Më gjen në"
+        data-en="Find me on">
+        Më gjen në
     </p>
 
-    <h2>
-        <span data-sq="@artbyelda"
-              data-en="@artbyelda">
-            @artbyelda
-        </span>
-    </h2>
+    <h2>@artbyelda</h2>
 
-    <a href="https://www.instagram.com/artbyelda/"
-       target="_blank">
+    <a
+        href="https://www.instagram.com/artbyelda/"
+        target="_blank"
+        rel="noopener noreferrer">
         Instagram ↗
     </a>
 
@@ -213,23 +363,35 @@
 </main>
 
 
+<!-- LIGHTBOX -->
+
 <div id="lightbox" class="lightbox">
 
-    <button class="close" onclick="closeArt()">×</button>
+    <button
+        class="close"
+        onclick="closeArt()">
+        ×
+    </button>
 
-    <img id="lightboxImage" src="" alt="Artwork">
+    <img
+        id="lightboxImage"
+        src=""
+        alt="Artwork">
 
-    <div class="lightbox-bottom">
+    <div class="lightbox-info">
 
         <div>
             <h3 id="lightboxTitle"></h3>
             <span id="lightboxPrice"></span>
         </div>
 
-        <a href="https://ig.me/m/artbyelda"
-           target="_blank"
-           data-sq="Pyet për këtë punim →"
-           data-en="Ask about this piece →">
+        <a
+            id="lightboxDM"
+            href="https://ig.me/m/artbyelda"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-sq="Pyet për këtë punim →"
+            data-en="Ask about this piece →">
             Pyet për këtë punim →
         </a>
 
@@ -239,14 +401,18 @@
 
 
 <footer>
+
     <span>Art by Elda</span>
 
-    <a href="https://www.instagram.com/artbyelda/"
-       target="_blank">
+    <a
+        href="https://www.instagram.com/artbyelda/"
+        target="_blank"
+        rel="noopener noreferrer">
         @artbyelda
     </a>
 
     <span>© 2026</span>
+
 </footer>
 
 
