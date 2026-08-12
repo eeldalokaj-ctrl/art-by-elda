@@ -911,6 +911,153 @@ footer a {
         gap: 0;
     }
 }
+/* MY GALLERY PAGE */
 
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 6%;
+}
+
+.back-home {
+    text-decoration: none;
+    color: inherit;
+    font-size: 13px;
+}
+
+
+.my-gallery {
+    padding: 80px 7% 120px;
+}
+
+.gallery-intro {
+    max-width: 650px;
+    margin-bottom: 70px;
+}
+
+.gallery-intro h1 {
+    font-family: "Allura", cursive;
+    font-size: 75px;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.gallery-intro p:last-child {
+    max-width: 500px;
+    line-height: 1.7;
+    opacity: 0.65;
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 55px 30px;
+}
+
+.gallery-piece {
+    overflow: hidden;
+}
+
+.gallery-piece img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-piece:hover img {
+    transform: scale(1.025);
+}
+
+.gallery-piece-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    padding: 15px 2px;
+}
+
+.gallery-piece-info h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.gallery-piece-info span {
+    font-size: 11px;
+    opacity: 0.55;
+}
+
+
+/* MY GALLERY BUTTON */
+
+.gallery-link {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.gallery-link h2 {
+    font-family: "Allura", cursive;
+    font-size: 65px;
+    font-weight: 400;
+    margin: 5px 0 10px;
+}
+
+.gallery-link p:not(.small-title) {
+    opacity: 0.6;
+    margin-bottom: 30px;
+}
+
+.gallery-button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: 1px solid currentColor;
+
+    color: inherit;
+    text-decoration: none;
+
+    font-size: 12px;
+
+    transition: all 0.3s ease;
+}
+
+.gallery-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .my-gallery {
+        padding: 60px 6% 80px;
+    }
+
+    .gallery-intro h1 {
+        font-size: 58px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .gallery-piece img {
+        height: 500px;
+    }
+
+    .gallery-link h2 {
+        font-size: 55px;
+    }
+}
 
 
