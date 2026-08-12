@@ -626,3 +626,249 @@ footer a {
         gap: 12px;
     }
 }
+/* =========================
+   CUSTOM ART PAGE
+========================= */
+
+.custom-page {
+    min-height: 100vh;
+}
+
+.custom-header {
+    position: sticky;
+    top: 15px;
+    z-index: 30;
+
+    margin: 15px 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background: rgba(219, 234, 254, 0.8);
+    backdrop-filter: blur(15px);
+}
+
+.custom-hero {
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+}
+
+.custom-hero h1 {
+    font-size: clamp(65px, 10vw, 130px);
+    line-height: 0.85;
+}
+
+.custom-hero h1 span,
+.custom-hero h1 em {
+    font-family: "Allura", cursive;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.info-section {
+    padding: 120px 10vw;
+
+    border-top: 1px solid rgba(49, 92, 114, 0.18);
+}
+
+.section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 25px;
+
+    margin-bottom: 65px;
+}
+
+.section-title span {
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.5;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    font-family: "Allura", cursive;
+    font-size: clamp(55px, 7vw, 90px);
+    font-weight: 400;
+}
+
+.techniques {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.technique {
+    padding: 35px;
+
+    border: 1px solid rgba(49, 92, 114, 0.2);
+
+    transition: transform 0.3s ease,
+                background 0.3s ease;
+}
+
+.technique:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.technique h3 {
+    margin: 0 0 15px;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.technique p {
+    margin: 0;
+
+    font-size: 13px;
+    opacity: 0.65;
+}
+
+.dimension-list {
+    max-width: 900px;
+}
+
+.dimension-list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 0;
+
+    border-bottom: 1px solid rgba(49, 92, 114, 0.2);
+}
+
+.dimension-list span {
+    font-size: 13px;
+}
+
+.dimension-list strong {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.order-section {
+    min-height: 65vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #c9e3f5;
+}
+
+.order-section h2 {
+    margin: 0 0 25px;
+
+    font-family: "Allura", cursive;
+
+    font-size: clamp(60px, 8vw, 105px);
+
+    font-weight: 400;
+}
+
+.order-section > p:not(.small-title) {
+    max-width: 550px;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+.thank-you {
+    padding: 100px 25px;
+
+    text-align: center;
+}
+
+.thank-you h2 {
+    margin: 0 0 20px;
+
+    font-family: "Allura", cursive;
+
+    font-size: 70px;
+    font-weight: 400;
+}
+
+.thank-you a {
+    color: #315c72;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .custom-header {
+        margin: 10px 15px;
+    }
+
+    .custom-hero {
+        min-height: 75vh;
+    }
+
+    .custom-hero h1 {
+        font-size: 70px;
+    }
+
+    .info-section {
+        padding: 90px 25px;
+    }
+
+    .techniques {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .technique {
+        padding: 28px;
+    }
+
+    .section-title {
+        margin-bottom: 45px;
+    }
+
+    .dimension-list div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .order-section {
+        min-height: 60vh;
+    }
+
+    .thank-you h2 {
+        font-size: 60px;
+    }
+}
+
