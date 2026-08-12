@@ -957,3 +957,274 @@ footer a {
     }
 
 }
+/* ================================
+   ELDA'S ART GALLERY — AESTHETIC
+================================ */
+
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255,255,255,.65), transparent 28%),
+        radial-gradient(circle at 90% 80%, rgba(173,205,220,.35), transparent 30%),
+        #eef4f2;
+
+    color: #304b52;
+}
+
+
+/* HEADER */
+
+.gallery-header {
+    padding: 28px 6%;
+    position: relative;
+    z-index: 10;
+}
+
+.gallery-header .brand {
+    font-size: 36px;
+    color: #304b52;
+}
+
+.back-home {
+    color: #304b52;
+    opacity: .65;
+    transition: .3s ease;
+}
+
+.back-home:hover {
+    opacity: 1;
+    transform: translateX(-4px);
+}
+
+
+/* INTRO */
+
+.my-gallery {
+    padding: 70px 7% 140px;
+}
+
+.gallery-intro {
+    max-width: 850px;
+    margin-bottom: 100px;
+}
+
+.gallery-intro .small-title {
+    color: #6f8b91;
+    letter-spacing: 4px;
+}
+
+.gallery-intro h1 {
+    margin: 5px 0 25px;
+
+    font-family: "Allura", cursive;
+    font-size: clamp(85px, 13vw, 170px);
+    line-height: .75;
+
+    color: #304b52;
+}
+
+.gallery-intro p:last-child {
+    max-width: 470px;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    color: #5d7378;
+}
+
+
+/* LITTLE DECORATIVE LINE */
+
+.gallery-intro::after {
+    content: "✦";
+
+    display: block;
+
+    margin-top: 45px;
+
+    font-size: 15px;
+    color: #91aeb2;
+}
+
+
+/* GALLERY */
+
+.gallery-grid {
+    column-count: 3;
+    column-gap: 32px;
+}
+
+
+/* ARTWORK */
+
+.gallery-piece {
+    display: inline-block;
+
+    width: 100%;
+
+    margin: 0 0 55px;
+
+    break-inside: avoid;
+
+    color: inherit;
+    text-decoration: none;
+
+    position: relative;
+}
+
+
+/* IMAGE */
+
+.gallery-piece img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    background: #e5eeeb;
+
+    transition:
+        transform .6s cubic-bezier(.2,.7,.2,1),
+        box-shadow .6s ease;
+
+    box-shadow:
+        0 12px 35px rgba(48,75,82,.08);
+}
+
+
+/* HOVER */
+
+.gallery-piece:hover img {
+    transform: translateY(-7px) scale(1.012);
+
+    box-shadow:
+        0 25px 55px rgba(48,75,82,.15);
+}
+
+
+/* TEXT UNDER ART */
+
+.gallery-piece-info {
+    padding: 17px 3px 0;
+
+    display: block;
+}
+
+.gallery-piece-info h3 {
+    margin: 0 0 7px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    letter-spacing: .2px;
+
+    color: #304b52;
+}
+
+.gallery-piece-info span {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: #789096;
+
+    opacity: .8;
+}
+
+
+/* NUMBER / ARTISTIC DETAIL */
+
+.gallery-piece::before {
+    content: "ARTWORK";
+
+    display: block;
+
+    position: absolute;
+
+    top: -24px;
+    left: 0;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    color: #91aeb2;
+
+    opacity: 0;
+
+    transition: opacity .3s ease;
+}
+
+.gallery-piece:hover::before {
+    opacity: 1;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #dce9e6;
+
+    color: #304b52;
+
+    border-top: 1px solid rgba(48,75,82,.12);
+
+    padding: 35px 6%;
+}
+
+footer a {
+    color: #304b52;
+}
+
+
+/* PHONE */
+
+@media (max-width: 700px) {
+
+    .gallery-header {
+        padding: 22px 20px;
+    }
+
+    .my-gallery {
+        padding: 55px 20px 90px;
+    }
+
+    .gallery-intro {
+        margin-bottom: 80px;
+    }
+
+    .gallery-intro h1 {
+        font-size: 78px;
+    }
+
+    .gallery-grid {
+        column-count: 2;
+        column-gap: 14px;
+    }
+
+    .gallery-piece {
+        margin-bottom: 32px;
+    }
+
+    .gallery-piece-info {
+        padding-top: 9px;
+    }
+
+    .gallery-piece-info h3 {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .gallery-piece-info span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .gallery-piece::before {
+        display: none;
+    }
+}
