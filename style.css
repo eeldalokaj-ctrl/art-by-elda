@@ -202,7 +202,7 @@ h1 {
 .custom h2 em,
 .about h2 span,
 .about h2 em {
-    font-family: "Allura", bold;
+    font-family: "Allura", sans-comic;
     font-style: normal;
 }
 
@@ -412,7 +412,7 @@ h1 {
 .contact h2 {
     margin: 25px 0;
 
-    font-family: "Allura", cursive;
+    font-family: "Allura",sans-comic;
 
     font-size: clamp(60px, 8vw, 100px);
 
