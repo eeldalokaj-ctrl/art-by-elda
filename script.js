@@ -43,9 +43,11 @@ function setArtwork(title, price) {
         ? `Përshëndetje Elda! Jam e interesuar për ${title} (${price}).`
         : `Hi Elda! I'm interested in ${title} (${price}).`;
 
-    console.log(message);
+    const instagramURL =
+        "https://ig.me/m/artbyelda?text=" +
+        encodeURIComponent(message);
 
-    localStorage.setItem("selectedArtwork", message);
+    window.open(instagramURL, "_blank");
 }
 
 
