@@ -871,4 +871,46 @@ footer a {
         font-size: 60px;
     }
 }
+.custom-options {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 45px 0 30px;
+}
+
+.custom-option {
+    padding: 25px 15px;
+    border-top: 1px solid rgba(49, 92, 114, 0.3);
+    border-bottom: 1px solid rgba(49, 92, 114, 0.3);
+}
+
+.custom-option h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.custom-option p {
+    margin: 0;
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+.order-note {
+    max-width: 550px;
+    font-size: 12px;
+    line-height: 1.8;
+    opacity: 0.65;
+}
+
+@media (max-width: 700px) {
+    .custom-options {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+
 
