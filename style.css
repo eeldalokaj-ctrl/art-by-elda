@@ -10,8 +10,9 @@ body {
     margin: 0;
     background: #dbeafe;
     color: #315c72;
-    font-family: "Allura", cursive;
+    font-family: "DM Sans", sans-serif;
 }
+
 
 
 /* TOP */
@@ -1232,14 +1233,18 @@ footer a {
 h2,
 h3,
 .brand,
+.works-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+}
+
 .custom h2 span,
 .custom h2 em,
 .about h2 span,
 .about h2 em,
-.contact h2,
-.works-heading h2 {
-    font-family: "Cormorant Garamond", serif;
+.contact h2 {
+    font-family: "Allura", cursive;
 }
+
 
 h1 {
     font-weight: 500;
