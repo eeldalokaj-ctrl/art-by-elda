@@ -120,8 +120,26 @@ h1 {
     color: #316c72;
 }
 
-.discover {
+    .discover {
     margin-top: 50px;
+
+    color: #315c72;
+    text-decoration: none;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    font-size: 9px;
+
+    border-bottom: 1px solid #315c72;
+    padding-bottom: 7px;
+
+    transition: transform 0.3s ease;
+}
+
+.discover:hover {
+    transform: translateX(8px);
+}
 
     color: #315c72;
     text-decoration: none;
