@@ -1248,3 +1248,41 @@ h1 {
 h2 {
     font-weight: 500;
 }
+.gallery-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 24px;
+
+    background: #315c72;
+    color: #dbeafe;
+
+    text-decoration: none;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    border-radius: 2px;
+
+    transition: all 0.35s ease;
+}
+
+.gallery-button::after {
+    content: "↗";
+    font-size: 16px;
+    transition: transform 0.35s ease;
+}
+
+.gallery-button:hover {
+    transform: translateY(-4px);
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+.gallery-button:hover::after {
+    transform: translate(4px, -4px);
+}
+
