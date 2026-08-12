@@ -911,13 +911,14 @@ footer a {
         gap: 0;
     }
 }
-/* MY GALLERY PAGE */
+/* =========================
+   MY GALLERY PAGE
+========================= */
 
 .gallery-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 25px 6%;
 }
 
@@ -926,7 +927,6 @@ footer a {
     color: inherit;
     font-size: 13px;
 }
-
 
 .my-gallery {
     padding: 80px 7% 120px;
@@ -951,20 +951,25 @@ footer a {
 }
 
 
+/* GALLERY */
+
 .gallery-grid {
-    columns: 3 280px;
+    column-count: 3;
     column-gap: 25px;
 }
 
 .gallery-piece {
+    width: 100%;
+    display: inline-block;
     break-inside: avoid;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .gallery-piece img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
+    max-height: none;
     object-fit: contain;
     transition: transform 0.5s ease;
 }
@@ -978,33 +983,6 @@ footer a {
     justify-content: space-between;
     align-items: baseline;
     padding: 12px 2px 5px;
-}
-
-.gallery-piece-info h3 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.gallery-piece-info span {
-    font-size: 11px;
-    opacity: 0.55;
-}
-    display: block;
-
-    transition: transform 0.5s ease;
-}
-
-.gallery-piece:hover img {
-    transform: scale(1.025);
-}
-
-.gallery-piece-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    padding: 15px 2px;
 }
 
 .gallery-piece-info h3 {
@@ -1040,22 +1018,16 @@ footer a {
 
 .gallery-button {
     display: inline-block;
-
     padding: 13px 25px;
-
     border: 1px solid currentColor;
-
     color: inherit;
     text-decoration: none;
-
     font-size: 12px;
-
     transition: all 0.3s ease;
 }
 
 .gallery-button:hover {
     transform: translateY(-3px);
-}
 }
 
 
@@ -1072,35 +1044,28 @@ footer a {
     }
 
     .gallery-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
-
-    .gallery-piece img {
-        height: 500px;
-    }
-
-    .gallery-link h2 {
-        font-size: 55px;
-    }
-@media (max-width: 700px) {
-
-    .gallery-grid {
-        columns: 2 160px;
+        column-count: 2;
         column-gap: 12px;
     }
 
     .gallery-piece {
-        margin-bottom: 12px;
+        margin-bottom: 18px;
     }
 
     .gallery-piece-info {
         display: block;
+        padding-top: 8px;
     }
 
     .gallery-piece-info h3 {
         margin-bottom: 4px;
     }
+
+    .gallery-piece-info span {
+        font-size: 10px;
+    }
+
+    .gallery-link h2 {
+        font-size: 55px;
+    }
 }
-
-
