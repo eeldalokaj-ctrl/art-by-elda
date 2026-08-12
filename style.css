@@ -1290,4 +1290,38 @@ h2 {
 .gallery-button:hover::after {
     transform: translate(4px, -4px);
 }
+/* =========================
+   SALE PRICES
+========================= */
 
+.price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.old-price {
+    font-size: 12px;
+    text-decoration: line-through;
+    opacity: 0.4;
+}
+
+.sale-price {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sale-badge {
+    display: inline-block;
+    padding: 4px 6px;
+
+    background: #315c72;
+    color: #dbeafe;
+
+    font-size: 7px;
+    letter-spacing: 1px;
+    line-height: 1;
+
+    border-radius: 2px;
+}
