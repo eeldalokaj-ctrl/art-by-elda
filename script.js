@@ -44,8 +44,7 @@ function setArtwork(title, price) {
         : `Hi Elda! I'm interested in ${title} (${price}).`;
 
     const instagramURL =
-        "https://ig.me/m/artbyelda?text=" +
-        encodeURIComponent(message);
+        `https://ig.me/m/artbyelda?text=${encodeURIComponent(message)}`;
 
     window.open(instagramURL, "_blank");
 }
