@@ -1228,3 +1228,23 @@ footer a {
         display: none;
     }
 }
+h1,
+h2,
+h3,
+.brand,
+.custom h2 span,
+.custom h2 em,
+.about h2 span,
+.about h2 em,
+.contact h2,
+.works-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 500;
+}
