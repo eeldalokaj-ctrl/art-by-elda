@@ -1325,3 +1325,33 @@ h2 {
 
     border-radius: 2px;
 }
+.art-description {
+    margin: 6px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+    opacity: 0.55;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 2px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.4;
+    font-size: 12px;
+}
+
+.sale-price {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.sale-badge {
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+}
