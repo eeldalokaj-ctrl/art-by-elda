@@ -487,6 +487,120 @@ window.addEventListener(
 /* =========================
    INITIAL LANGUAGE
 ========================= */
+/* =========================================
+   GALLERY — MOUSE LIGHT
+========================================= */
+
+if (window.matchMedia("(pointer: fine)").matches) {
+
+    const glow = document.createElement("div");
+
+    glow.className = "mouse-glow";
+
+    document.body.appendChild(glow);
+
+    document.addEventListener("mousemove", function(e) {
+
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
+
+    });
+
+}
+
+
+/* =========================================
+   GALLERY — IMAGE CLICK
+========================================= */
+
+document.querySelectorAll(".gallery-piece").forEach(piece => {
+
+    piece.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const image = this.querySelector("img");
+
+        const title =
+            this.querySelector("h3")?.textContent || "";
+
+        const technique =
+            this.querySelector("span")?.textContent || "";
+
+        const overlay =
+            document.createElement("div");
+
+        overlay.className = "gallery-viewer";
+
+        overlay.innerHTML = `
+            <button class="gallery-viewer-close">×</button>
+
+            <div class="gallery-viewer-content">
+
+                <img src="${image.src}" alt="${image.alt}">
+
+                <div class="gallery-viewer-caption">
+                    <h3>${title}</h3>
+                    <span>${technique}</span>
+                </div>
+
+            </div>
+        `;
+
+        document.body.appendChild(overlay);
+
+        requestAnimationFrame(() => {
+            overlay.classList.add("active");
+        });
+
+        document.body.style.overflow = "hidden";
+
+
+        function closeViewer() {
+
+            overlay.classList.remove("active");
+
+            setTimeout(() => {
+                overlay.remove();
+            }, 400);
+
+            document.body.style.overflow = "";
+
+        }
+
+
+        overlay
+            .querySelector(".gallery-viewer-close")
+            .addEventListener("click", closeViewer);
+
+
+        overlay.addEventListener("click", function(e) {
+
+            if (e.target === overlay) {
+                closeViewer();
+            }
+
+        });
+
+
+        document.addEventListener("keydown", function esc(e) {
+
+            if (e.key === "Escape") {
+
+                closeViewer();
+
+                document.removeEventListener(
+                    "keydown",
+                    esc
+                );
+
+            }
+
+        });
+
+    });
+
+});
 
 changeLanguage(
     currentLanguage
