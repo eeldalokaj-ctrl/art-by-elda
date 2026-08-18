@@ -108,3 +108,190 @@ document.addEventListener("keydown", function(event) {
 
 
 changeLanguage(currentLanguage);
+/* ================================
+   ART BY ELDA — GALLERY ANIMATIONS
+================================ */
+
+// PAGE LOADER
+document.addEventListener("DOMContentLoaded", () => {
+
+    document.body.classList.add("page-loaded");
+
+    // Reveal elements when they enter the screen
+    const revealElements = document.querySelectorAll(
+        ".custom-inner, .works-heading, .art-card, .gallery-link, .about, .contact"
+    );
+
+    const revealObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("revealed");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    revealElements.forEach((element) => {
+        element.classList.add("reveal");
+        revealObserver.observe(element);
+    });
+
+});
+
+
+/* ================================
+   ARTWORK HOVER — PAINT EFFECT
+================================ */
+
+document.querySelectorAll(".image-wrap").forEach((art) => {
+
+    art.addEventListener("mousemove", (e) => {
+
+        const rect = art.getBoundingClientRect();
+
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+        art.style.setProperty("--mouse-x", `${x}%`);
+        art.style.setProperty("--mouse-y", `${y}%`);
+
+    });
+
+});
+
+
+/* ================================
+   SMOOTH PAGE TRANSITION
+================================ */
+
+document.querySelectorAll("a[href]").forEach((link) => {
+
+    const href = link.getAttribute("href");
+
+    if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("https") ||
+        href.startsWith("http") ||
+        href.startsWith("mailto:")
+    ) {
+        return;
+    }
+
+    link.addEventListener("click", (event) => {
+
+        event.preventDefault();
+
+        document.body.classList.add("page-exit");
+
+        setTimeout(() => {
+            window.location.href = href;
+        }, 450);
+
+    });
+
+});
+
+
+/* ================================
+   PARALLAX HERO
+================================ */
+
+window.addEventListener("scroll", () => {
+
+    const hero = document.querySelector(".hero-content");
+
+    if (!hero) return;
+
+    const scroll = window.scrollY;
+
+    if (scroll < window.innerHeight) {
+
+        hero.style.transform =
+            `translateY(${scroll * 0.18}px)`;
+
+        hero.style.opacity =
+            `${1 - scroll / (window.innerHeight * 1.2)}`;
+
+    }
+
+});
+
+
+/* ================================
+   CURSOR PAINT TRAIL — DESKTOP
+================================ */
+
+if (window.innerWidth > 700) {
+
+    let lastX = 0;
+    let lastY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+
+        const distance = Math.hypot(
+            e.clientX - lastX,
+            e.clientY - lastY
+        );
+
+        if (distance < 35) return;
+
+        lastX = e.clientX;
+        lastY = e.clientY;
+
+        const brush = document.createElement("span");
+
+        brush.className = "paint-dot";
+
+        brush.style.left = `${e.clientX}px`;
+        brush.style.top = `${e.clientY}px`;
+
+        brush.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(brush);
+
+        setTimeout(() => {
+            brush.remove();
+        }, 700);
+
+    });
+
+}
+
+
+/* ================================
+   MAGNETIC BUTTONS
+================================ */
+
+document.querySelectorAll(
+    ".discover, .instagram-button, .gallery-button, .inquire"
+).forEach((button) => {
+
+    button.addEventListener("mousemove", (e) => {
+
+        const rect = button.getBoundingClientRect();
+
+        const x =
+            e.clientX - rect.left - rect.width / 2;
+
+        const y =
+            e.clientY - rect.top - rect.height / 2;
+
+        button.style.transform =
+            `translate(${x * 0.12}px, ${y * 0.12}px)`;
+
+    });
+
+    button.addEventListener("mouseleave", () => {
+
+        button.style.transform = "";
+
+    });
+
+});
