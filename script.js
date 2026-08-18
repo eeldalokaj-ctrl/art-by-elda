@@ -1,7 +1,18 @@
+/* =========================
+   ART BY ELDA — MAIN JS
+========================= */
+
+
+/* =========================
+   LANGUAGE
+========================= */
+
 const sqButton = document.getElementById("sq");
 const enButton = document.getElementById("en");
 
-let currentLanguage = localStorage.getItem("language") || "sq";
+let currentLanguage =
+    localStorage.getItem("language") || "sq";
+
 
 function changeLanguage(language) {
 
@@ -11,7 +22,8 @@ function changeLanguage(language) {
 
     document.querySelectorAll("[data-sq][data-en]").forEach(element => {
 
-        const translation = element.getAttribute("data-" + language);
+        const translation =
+            element.getAttribute("data-" + language);
 
         if (translation) {
             element.textContent = translation;
@@ -19,22 +31,37 @@ function changeLanguage(language) {
 
     });
 
-    sqButton.classList.toggle("active", language === "sq");
-    enButton.classList.toggle("active", language === "en");
+    sqButton.classList.toggle(
+        "active",
+        language === "sq"
+    );
 
-    localStorage.setItem("language", language);
+    enButton.classList.toggle(
+        "active",
+        language === "en"
+    );
+
+    localStorage.setItem(
+        "language",
+        language
+    );
 }
 
 
-sqButton.addEventListener("click", function() {
-    changeLanguage("sq");
-});
+sqButton.addEventListener(
+    "click",
+    () => changeLanguage("sq")
+);
+
+enButton.addEventListener(
+    "click",
+    () => changeLanguage("en")
+);
 
 
-enButton.addEventListener("click", function() {
-    changeLanguage("en");
-});
-
+/* =========================
+   ARTWORK MESSAGE
+========================= */
 
 function setArtwork(title, price) {
 
@@ -46,252 +73,421 @@ function setArtwork(title, price) {
     const instagramURL =
         `https://ig.me/m/artbyelda?text=${encodeURIComponent(message)}`;
 
-    window.open(instagramURL, "_blank");
+    window.open(
+        instagramURL,
+        "_blank"
+    );
 }
 
 
+/* =========================
+   LIGHTBOX
+========================= */
+
 function openArt(card) {
 
-    const image = card.querySelector("img");
+    const image =
+        card.querySelector("img");
 
-    const title = card.querySelector("h3").textContent;
+    const title =
+        card.querySelector("h3").textContent;
 
-    const price = card.querySelector(".sale-price").textContent;
-
-
-    document.getElementById("lightboxImage").src = image.src;
-
-    document.getElementById("lightboxTitle").textContent = title;
-
-    document.getElementById("lightboxPrice").textContent = price;
+    const price =
+        card.querySelector(".sale-price").textContent;
 
 
-    const dmButton = document.getElementById("lightboxDM");
+    const lightbox =
+        document.getElementById("lightbox");
 
-    dmButton.onclick = function() {
+    const lightboxImage =
+        document.getElementById("lightboxImage");
 
-        setArtwork(title, price);
+    const lightboxTitle =
+        document.getElementById("lightboxTitle");
+
+    const lightboxPrice =
+        document.getElementById("lightboxPrice");
+
+
+    lightboxImage.src = image.src;
+
+    lightboxTitle.textContent = title;
+
+    lightboxPrice.textContent = price;
+
+
+    const dmButton =
+        document.getElementById("lightboxDM");
+
+    dmButton.onclick = function(event) {
+
+        event.preventDefault();
+
+        setArtwork(
+            title,
+            price
+        );
 
     };
 
 
-    document.getElementById("lightbox").classList.add("show");
+    lightbox.classList.add("show");
 
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow =
+        "hidden";
 }
 
 
 function closeArt() {
 
-    document.getElementById("lightbox").classList.remove("show");
+    const lightbox =
+        document.getElementById("lightbox");
 
-    document.body.style.overflow = "";
+    lightbox.classList.remove("show");
+
+    document.body.style.overflow =
+        "";
 }
 
 
-document.getElementById("lightbox").addEventListener("click", function(event) {
+/* close by clicking background */
 
-    if (event.target === this) {
-        closeArt();
+document
+    .getElementById("lightbox")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeArt();
+        }
+
+    });
+
+
+/* escape key */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+            closeArt();
+        }
+
     }
-
-});
-
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape") {
-        closeArt();
-    }
-
-});
+);
 
 
-changeLanguage(currentLanguage);
-/* ================================
-   ART BY ELDA — GALLERY ANIMATIONS
-================================ */
+/* =========================
+   SCROLL REVEAL
+========================= */
 
-// PAGE LOADER
-document.addEventListener("DOMContentLoaded", () => {
-
-    document.body.classList.add("page-loaded");
-
-    // Reveal elements when they enter the screen
-    const revealElements = document.querySelectorAll(
-        ".custom-inner, .works-heading, .art-card, .gallery-link, .about, .contact"
+const revealElements =
+    document.querySelectorAll(
+        ".section-reveal"
     );
 
-    const revealObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
+
+const revealObserver =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("revealed");
-                    revealObserver.unobserve(entry.target);
+
+                    entry.target.classList.add(
+                        "revealed"
+                    );
+
+                    revealObserver.unobserve(
+                        entry.target
+                    );
+
                 }
+
             });
+
         },
         {
             threshold: 0.12
         }
     );
 
-    revealElements.forEach((element) => {
-        element.classList.add("reveal");
-        revealObserver.observe(element);
-    });
 
-});
+revealElements.forEach(
+    element => revealObserver.observe(element)
+);
 
 
-/* ================================
-   ARTWORK HOVER — PAINT EFFECT
-================================ */
-
-document.querySelectorAll(".image-wrap").forEach((art) => {
-
-    art.addEventListener("mousemove", (e) => {
-
-        const rect = art.getBoundingClientRect();
-
-        const x = ((e.clientX - rect.left) / rect.width) * 100;
-        const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-        art.style.setProperty("--mouse-x", `${x}%`);
-        art.style.setProperty("--mouse-y", `${y}%`);
-
-    });
-
-});
-
-
-/* ================================
-   SMOOTH PAGE TRANSITION
-================================ */
-
-document.querySelectorAll("a[href]").forEach((link) => {
-
-    const href = link.getAttribute("href");
-
-    if (
-        !href ||
-        href.startsWith("#") ||
-        href.startsWith("https") ||
-        href.startsWith("http") ||
-        href.startsWith("mailto:")
-    ) {
-        return;
-    }
-
-    link.addEventListener("click", (event) => {
-
-        event.preventDefault();
-
-        document.body.classList.add("page-exit");
-
-        setTimeout(() => {
-            window.location.href = href;
-        }, 450);
-
-    });
-
-});
-
-
-/* ================================
-   PARALLAX HERO
-================================ */
-
-window.addEventListener("scroll", () => {
-
-    const hero = document.querySelector(".hero-content");
-
-    if (!hero) return;
-
-    const scroll = window.scrollY;
-
-    if (scroll < window.innerHeight) {
-
-        hero.style.transform =
-            `translateY(${scroll * 0.18}px)`;
-
-        hero.style.opacity =
-            `${1 - scroll / (window.innerHeight * 1.2)}`;
-
-    }
-
-});
-
-
-/* ================================
-   CURSOR PAINT TRAIL — DESKTOP
-================================ */
+/* =========================
+   MAGNETIC BUTTONS
+========================= */
 
 if (window.innerWidth > 700) {
 
-    let lastX = 0;
-    let lastY = 0;
+    document
+        .querySelectorAll(".magnetic")
+        .forEach(button => {
 
-    document.addEventListener("mousemove", (e) => {
+            button.addEventListener(
+                "mousemove",
+                event => {
 
-        const distance = Math.hypot(
-            e.clientX - lastX,
-            e.clientY - lastY
-        );
+                    const rect =
+                        button.getBoundingClientRect();
 
-        if (distance < 35) return;
+                    const x =
+                        event.clientX -
+                        rect.left -
+                        rect.width / 2;
 
-        lastX = e.clientX;
-        lastY = e.clientY;
+                    const y =
+                        event.clientY -
+                        rect.top -
+                        rect.height / 2;
 
-        const brush = document.createElement("span");
+                    button.style.transform =
+                        `translate(${x * .08}px, ${y * .08}px)`;
 
-        brush.className = "paint-dot";
+                }
+            );
 
-        brush.style.left = `${e.clientX}px`;
-        brush.style.top = `${e.clientY}px`;
 
-        brush.style.transform =
-            `rotate(${Math.random() * 360}deg)`;
+            button.addEventListener(
+                "mouseleave",
+                () => {
 
-        document.body.appendChild(brush);
+                    button.style.transform =
+                        "";
 
-        setTimeout(() => {
-            brush.remove();
-        }, 700);
+                }
+            );
 
-    });
+        });
 
 }
 
 
-/* ================================
-   MAGNETIC BUTTONS
-================================ */
+/* =========================
+   ART IMAGE TILT
+========================= */
 
-document.querySelectorAll(
-    ".discover, .instagram-button, .gallery-button, .inquire"
-).forEach((button) => {
+if (window.innerWidth > 700) {
 
-    button.addEventListener("mousemove", (e) => {
+    document
+        .querySelectorAll(".image-wrap")
+        .forEach(art => {
 
-        const rect = button.getBoundingClientRect();
+            art.addEventListener(
+                "mousemove",
+                event => {
 
-        const x =
-            e.clientX - rect.left - rect.width / 2;
+                    const rect =
+                        art.getBoundingClientRect();
 
-        const y =
-            e.clientY - rect.top - rect.height / 2;
+                    const x =
+                        (event.clientX - rect.left) /
+                        rect.width;
 
-        button.style.transform =
-            `translate(${x * 0.12}px, ${y * 0.12}px)`;
+                    const y =
+                        (event.clientY - rect.top) /
+                        rect.height;
 
-    });
+                    const rotateY =
+                        (x - .5) * 2;
 
-    button.addEventListener("mouseleave", () => {
+                    const rotateX =
+                        (y - .5) * -2;
 
-        button.style.transform = "";
+                    art.style.transform =
+                        `perspective(900px)
+                         rotateX(${rotateX}deg)
+                         rotateY(${rotateY}deg)
+                         translateY(-5px)`;
 
-    });
+                }
+            );
 
-});
+
+            art.addEventListener(
+                "mouseleave",
+                () => {
+
+                    art.style.transform =
+                        "";
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =========================
+   CURSOR PAINT DUST
+========================= */
+
+if (window.innerWidth > 900) {
+
+    let lastX = 0;
+    let lastY = 0;
+
+
+    document.addEventListener(
+        "mousemove",
+        event => {
+
+            const distance =
+                Math.hypot(
+                    event.clientX - lastX,
+                    event.clientY - lastY
+                );
+
+
+            if (distance < 55) {
+                return;
+            }
+
+
+            lastX = event.clientX;
+            lastY = event.clientY;
+
+
+            const dot =
+                document.createElement("span");
+
+            dot.style.position =
+                "fixed";
+
+            dot.style.left =
+                `${event.clientX}px`;
+
+            dot.style.top =
+                `${event.clientY}px`;
+
+            dot.style.width =
+                `${Math.random() * 3 + 2}px`;
+
+            dot.style.height =
+                dot.style.width;
+
+            dot.style.borderRadius =
+                "50%";
+
+            dot.style.background =
+                "rgba(49,92,114,.18)";
+
+            dot.style.pointerEvents =
+                "none";
+
+            dot.style.zIndex =
+                "9997";
+
+            dot.style.transform =
+                "translate(-50%,-50%)";
+
+            dot.style.transition =
+                "all .7s ease";
+
+
+            document.body.appendChild(dot);
+
+
+            requestAnimationFrame(() => {
+
+                dot.style.opacity = "0";
+
+                dot.style.transform =
+                    "translate(-50%,-50%) scale(3)";
+
+            });
+
+
+            setTimeout(
+                () => dot.remove(),
+                750
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================
+   HERO PARALLAX
+========================= */
+
+const heroContent =
+    document.querySelector(".hero-content");
+
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        if (!heroContent) return;
+
+        const scroll =
+            window.scrollY;
+
+        if (scroll <
+            window.innerHeight) {
+
+            heroContent.style.transform =
+                `translateY(${scroll * .12}px)`;
+
+            heroContent.style.opacity =
+                Math.max(
+                    0,
+                    1 -
+                    scroll /
+                    (window.innerHeight * .9)
+                );
+
+        }
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+/* =========================
+   PAGE LOADER
+========================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(
+            () => {
+
+                const loader =
+                    document.getElementById(
+                        "artLoader"
+                    );
+
+                if (loader) {
+                    loader.style.pointerEvents =
+                        "none";
+                }
+
+            },
+            2500
+        );
+
+    }
+);
+
+
+/* =========================
+   INITIAL LANGUAGE
+========================= */
+
+changeLanguage(
+    currentLanguage
+);
