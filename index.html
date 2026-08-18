@@ -11,51 +11,50 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- ART GALLERY INTRO -->
-<div id="gallery-loader">
+
+<!-- ================= LOADER ================= -->
+
+<div class="art-loader" id="artLoader">
     <div class="loader-paint"></div>
-
-    <div class="loader-content">
-        <span>EST. 2026</span>
-        <h2>Art by Elda</h2>
-        <p>Paintings · Drawings · Custom Art</p>
-    </div>
+    <div class="loader-name">Art by Elda</div>
 </div>
 
-<!-- ARTISTIC CURSOR -->
-<div class="art-cursor">
-    <span>VIEW</span>
-</div>
 
-<header class="hero">
+<!-- ================= NAV ================= -->
+
+<header class="hero" id="top">
 
     <div class="topbar">
 
         <a class="brand" href="#top">Art by Elda</a>
 
         <nav>
-    <a href="#works" data-sq="Punimet" data-en="Works">Punimet</a>
-        <a href="#custom"
-   data-sq="Porosi"
-   data-en="Custom Art">
-    Porosi
-</a>
-    <a href="#about"
-       data-sq="Rreth meje"
-       data-en="About">
-        Rreth meje
-    </a>
+            <a href="#works" data-sq="Punimet" data-en="Works">Punimet</a>
 
-    <a href="#contact"
-       data-sq="Kontakt"
-       data-en="Contact">
-        Kontakt
-    </a>
-</nav>
+            <a href="#custom"
+               data-sq="Porosi"
+               data-en="Custom Art">
+                Porosi
+            </a>
+
+            <a href="#about"
+               data-sq="Rreth meje"
+               data-en="About">
+                Rreth meje
+            </a>
+
+            <a href="#contact"
+               data-sq="Kontakt"
+               data-en="Contact">
+                Kontakt
+            </a>
+        </nav>
+
         <div class="language">
             <button id="sq" class="active">SQ</button>
             <span>/</span>
@@ -65,23 +64,40 @@
     </div>
 
 
-    <div class="hero-content" id="top">
+    <!-- ================= HERO ================= -->
 
-        <p
-            data-sq="Piktura · Vizatime · Art i personalizuar"
-            data-en="Paintings · Drawings · Custom art">
+    <div class="hero-art art-float-one"></div>
+    <div class="hero-art art-float-two"></div>
+    <div class="hero-art art-float-three"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-subtitle"
+           data-sq="Piktura · Vizatime · Art i personalizuar"
+           data-en="Paintings · Drawings · Custom art">
             Piktura · Vizatime · Art i personalizuar
         </p>
 
-        <h1>Art by Elda</h1>
-<a
-    href="#works"
-    class="discover"
-    data-sq="Zbulo më shumë →"
-    data-en="Discover more →">
-    Zbulo më shumë →
-</a>
+        <div class="hero-title-wrap">
+            <span class="paint-line paint-line-one"></span>
+            <span class="paint-line paint-line-two"></span>
 
+            <h1>Art by Elda</h1>
+        </div>
+
+        <a
+            href="#works"
+            class="discover magnetic"
+            data-sq="Zbulo më shumë →"
+            data-en="Discover more →">
+            Zbulo më shumë →
+        </a>
+
+    </div>
+
+    <div class="scroll-note">
+        <span></span>
+        SCROLL
     </div>
 
 </header>
@@ -89,9 +105,13 @@
 
 <main>
 
-<!-- CUSTOM ART — LART -->
 
-<section id="custom" class="custom">
+<!-- ================= CUSTOM ================= -->
+
+<section id="custom" class="custom section-reveal">
+
+    <div class="paint-corner paint-corner-left"></div>
+    <div class="paint-corner paint-corner-right"></div>
 
     <div class="custom-inner">
 
@@ -102,74 +122,84 @@
         </p>
 
         <h2>
-            <span
-                data-sq="Ke një ide?"
-                data-en="Have an idea?">
+            <span data-sq="Ke një ide?"
+                  data-en="Have an idea?">
                 Ke një ide?
             </span>
 
             <br>
 
-            <em
-                data-sq="Ta krijojmë."
+            <em data-sq="Ta krijojmë."
                 data-en="Let's create it.">
                 Ta krijojmë.
             </em>
         </h2>
 
-        <p
-            class="custom-text"
-            data-sq="Zgjidh teknikën dhe dimensionin për punimin tënd të personalizuar."
-            data-en="Choose the technique and dimensions for your custom artwork.">
+        <p class="custom-text"
+           data-sq="Zgjidh teknikën dhe dimensionin për punimin tënd të personalizuar."
+           data-en="Choose the technique and dimensions for your custom artwork.">
             Zgjidh teknikën dhe dimensionin për punimin tënd të personalizuar.
         </p>
 
+
         <div class="custom-options">
 
-            <div class="custom-option">
-                <h3
-                    data-sq="Laps · Letër"
+            <div class="custom-option art-option">
+                <span class="option-number">01</span>
+
+                <h3 data-sq="Laps · Letër"
                     data-en="Pencil · Paper">
                     Laps · Letër
                 </h3>
 
                 <p>A4 → 70 × 100 cm</p>
+
+                <span class="option-brush"></span>
             </div>
 
-            <div class="custom-option">
-                <h3
-                    data-sq="Pëlhurë · Akril"
+
+            <div class="custom-option art-option">
+                <span class="option-number">02</span>
+
+                <h3 data-sq="Pëlhurë · Akril"
                     data-en="Canvas · Acrylic">
                     Pëlhurë · Akril
                 </h3>
 
                 <p>10 × 10 → 100 × 150 cm</p>
+
+                <span class="option-brush"></span>
             </div>
 
-            <div class="custom-option">
-                <h3
-                    data-sq="Pëlhurë · Vaj"
+
+            <div class="custom-option art-option">
+                <span class="option-number">03</span>
+
+                <h3 data-sq="Pëlhurë · Vaj"
                     data-en="Canvas · Oil">
                     Pëlhurë · Vaj
                 </h3>
 
                 <p>10 × 10 → 100 × 150 cm</p>
+
+                <span class="option-brush"></span>
             </div>
 
         </div>
 
-        <p
-            class="order-note"
-            data-sq="Rekomandohet që për porosi të kontaktoni së paku 1–2 javë para datës kur ju nevojitet punimi."
-            data-en="For commissions, it is recommended to contact me at least 1–2 weeks before the date you need the artwork.">
+
+        <p class="order-note"
+           data-sq="Rekomandohet që për porosi të kontaktoni së paku 1–2 javë para datës kur ju nevojitet punimi."
+           data-en="For commissions, it is recommended to contact me at least 1–2 weeks before the date you need the artwork.">
             Rekomandohet që për porosi të kontaktoni së paku 1–2 javë para datës kur ju nevojitet punimi.
         </p>
+
 
         <a
             href="https://ig.me/m/artbyelda"
             target="_blank"
             rel="noopener noreferrer"
-            class="instagram-button"
+            class="instagram-button magnetic"
             data-sq="Kontakto @artbyelda →"
             data-en="Contact @artbyelda →">
             Kontakto @artbyelda →
@@ -180,24 +210,27 @@
 </section>
 
 
-<!-- WORKS -->
+
+<!-- ================= WORKS ================= -->
 
 <section id="works" class="works">
 
-    <div class="works-heading">
+    <div class="works-heading section-reveal">
 
-        <p
-            class="small-title"
-            data-sq="Punimet e mia"
-            data-en="My work">
-            Punimet e mia
-        </p>
+        <div>
+            <p class="small-title"
+               data-sq="Punimet e mia"
+               data-en="My work">
+                Punimet e mia
+            </p>
 
-        <h2
-            data-sq="Një përzgjedhje"
-            data-en="A selection">
-            Një përzgjedhje
-        </h2>
+            <h2 data-sq="Një përzgjedhje"
+                data-en="A selection">
+                Një përzgjedhje
+            </h2>
+        </div>
+
+        <span class="works-mark">✦</span>
 
     </div>
 
@@ -205,27 +238,28 @@
     <div class="gallery">
 
 
-        <!-- Charlie Chaplin -->
+        <!-- CHARLIE -->
 
-        <article class="art-card">
+        <article class="art-card section-reveal">
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
 
-                <img
-                    src="IMG_9828.jpeg"
-                    alt="Charlie Chaplin">
+                <span class="art-number">01</span>
+
+                <img src="IMG_9828.jpeg"
+                     alt="Charlie Chaplin">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
 
+                <div class="image-brush"></div>
+
             </div>
+
 
             <div class="card-info">
 
@@ -245,39 +279,41 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('Charlie Chaplin', '€105')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('Charlie Chaplin', '€105')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
             </div>
 
         </article>
-        <!-- Crimson Reverie -->
 
-        <article class="art-card">
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
 
-                <img
-                    src="IMG_0521.jpeg"
-                    alt="Crimson Reverie">
+        <!-- CRIMSON -->
+
+        <article class="art-card section-reveal">
+
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
+
+                <span class="art-number">02</span>
+
+                <img src="IMG_0521.jpeg"
+                     alt="Crimson Reverie">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -294,19 +330,18 @@
 
                     <p class="art-description"
                        data-sq="40 × 30 cm · Vaj në pëlhurë"
-                       data-en="40 × 30 cm · Vaj on canvas">
+                       data-en="40 × 30 cm · Oil on canvas">
                         40 × 30 cm · Vaj në pëlhurë
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('Crimson Reverie', '€50')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('Crimson Reverie', '€50')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -316,27 +351,25 @@
 
 
 
+        <!-- DUA LIPA -->
 
-      
-        <!-- Dua Lipa -->
+        <article class="art-card section-reveal">
 
-        <article class="art-card">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+                <span class="art-number">03</span>
 
-                <img
-                    src="IMG_8930.jpeg"
-                    alt="Dua Lipa Portrait">
+                <img src="IMG_8930.jpeg"
+                     alt="Dua Lipa Portrait">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -358,14 +391,13 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('Dua Lipa Portrait', '€40')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('Dua Lipa Portrait', '€40')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -374,25 +406,26 @@
         </article>
 
 
-        <!-- Salvador Dali -->
 
-        <article class="art-card">
+        <!-- DALI -->
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+        <article class="art-card section-reveal">
 
-                <img
-                    src="IMG_8255.jpeg"
-                    alt="Salvador Dali">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
+
+                <span class="art-number">04</span>
+
+                <img src="IMG_8255.jpeg"
+                     alt="Salvador Dali">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -414,14 +447,13 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('Salvador Dali', '€100')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('Salvador Dali', '€100')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -430,25 +462,26 @@
         </article>
 
 
-        <!-- Billie Eilish -->
 
-        <article class="art-card">
+        <!-- BILLIE -->
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+        <article class="art-card section-reveal">
 
-                <img
-                    src="IMG_8260.jpeg"
-                    alt="Billie Eilish">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
+
+                <span class="art-number">05</span>
+
+                <img src="IMG_8260.jpeg"
+                     alt="Billie Eilish">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -470,14 +503,13 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('Billie Eilish', '€60')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('Billie Eilish', '€60')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -486,25 +518,26 @@
         </article>
 
 
-        <!-- The Rock -->
 
-        <article class="art-card">
+        <!-- ROCK -->
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+        <article class="art-card section-reveal">
 
-                <img
-                    src="IMG_0361.jpeg"
-                    alt="The Rock">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
+
+                <span class="art-number">06</span>
+
+                <img src="IMG_0361.jpeg"
+                     alt="The Rock">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -526,14 +559,13 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('The Rock', '€40')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('The Rock', '€40')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -542,25 +574,26 @@
         </article>
 
 
-        <!-- L. Messi -->
 
-        <article class="art-card">
+        <!-- MESSI -->
 
-            <div
-                class="image-wrap"
-                onclick="openArt(this.parentElement)">
+        <article class="art-card section-reveal">
 
-                <img
-                    src="IMG_8286.jpeg"
-                    alt="L. Messi">
+            <div class="image-wrap" onclick="openArt(this.parentElement)">
+
+                <span class="art-number">07</span>
+
+                <img src="IMG_8286.jpeg"
+                     alt="L. Messi">
 
                 <div class="view">
-                    <span
-                        data-sq="Shiko"
-                        data-en="View">
+                    <span data-sq="Shiko"
+                          data-en="View">
                         Shiko
                     </span>
                 </div>
+
+                <div class="image-brush"></div>
 
             </div>
 
@@ -582,14 +615,13 @@
                     </p>
                 </div>
 
-                <a
-                    href="https://ig.me/m/artbyelda"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inquire"
-                    onclick="setArtwork('L. Messi', '€45')"
-                    data-sq="Pyet →"
-                    data-en="Inquire →">
+                <a href="https://ig.me/m/artbyelda"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inquire magnetic"
+                   onclick="setArtwork('L. Messi', '€45')"
+                   data-sq="Pyet →"
+                   data-en="Inquire →">
                     Pyet →
                 </a>
 
@@ -597,39 +629,34 @@
 
         </article>
 
-
     </div>
 
 </section>
 
-          </div>
 
-</section>
-    <section class="gallery-link">
 
-    <p
-        class="small-title"
-        data-sq="Përtej shitjes"
-        data-en="Beyond the shop">
+<!-- ================= GALLERY LINK ================= -->
+
+<section class="gallery-link section-reveal">
+
+    <span class="gallery-orbit"></span>
+
+    <p class="small-title"
+       data-sq="Përtej shitjes"
+       data-en="Beyond the shop">
         Përtej shitjes
     </p>
 
-    <h2
-        data-sq="My Gallery"
-        data-en="My Gallery">
-        My Gallery
-    </h2>
+    <h2>My Gallery</h2>
 
-    <p
-        data-sq="Shiko më shumë nga puna ime artistike."
-        data-en="Explore more of my artwork.">
+    <p data-sq="Shiko më shumë nga puna ime artistike."
+       data-en="Explore more of my artwork.">
         Shiko më shumë nga puna ime artistike.
     </p>
 
-    <a href="gallery.html" class="gallery-button">
-        <span
-            data-sq="Shiko galerinë →"
-            data-en="View gallery →">
+    <a href="gallery.html" class="gallery-button magnetic">
+        <span data-sq="Shiko galerinë →"
+              data-en="View gallery →">
             Shiko galerinë →
         </span>
     </a>
@@ -637,49 +664,39 @@
 </section>
 
 
-<!-- ABOUT -->
 
+<!-- ================= ABOUT ================= -->
 
-<!-- ABOUT -->
-
-<section id="about" class="about">
+<section id="about" class="about section-reveal">
 
     <div class="about-label">
-
-        <p
-            class="small-title"
-            data-sq="Rreth meje"
-            data-en="About me">
+        <p class="small-title"
+           data-sq="Rreth meje"
+           data-en="About me">
             Rreth meje
         </p>
 
+        <span class="about-number">02</span>
     </div>
-
 
     <div>
 
         <h2>
-
-            <span
-                data-sq="Unë jam Elda,"
-                data-en="I'm Elda,">
+            <span data-sq="Unë jam Elda,"
+                  data-en="I'm Elda,">
                 Unë jam Elda,
             </span>
 
             <br>
 
-            <em
-                data-sq="artiste nga Kosova."
+            <em data-sq="artiste nga Kosova."
                 data-en="an artist from Kosovo.">
                 artiste nga Kosova.
             </em>
-
         </h2>
 
-
-        <p
-            data-sq="Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente."
-            data-en="I create paintings, drawings and custom pieces. For me, art is a way to tell stories and preserve moments.">
+        <p data-sq="Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente."
+           data-en="I create paintings, drawings and custom pieces. For me, art is a way to tell stories and preserve moments.">
             Krijoj piktura, vizatime dhe punime të personalizuara. Arti për mua është një mënyrë për të treguar histori dhe për të ruajtur momente.
         </p>
 
@@ -688,23 +705,25 @@
 </section>
 
 
-<!-- CONTACT -->
 
-<section id="contact" class="contact">
+<!-- ================= CONTACT ================= -->
 
-    <p
-        class="small-title"
-        data-sq="Më gjen në"
-        data-en="Find me on">
+<section id="contact" class="contact section-reveal">
+
+    <div class="contact-paint"></div>
+
+    <p class="small-title"
+       data-sq="Më gjen në"
+       data-en="Find me on">
         Më gjen në
     </p>
 
     <h2>@artbyelda</h2>
 
-    <a
-        href="https://www.instagram.com/artbyelda/"
-        target="_blank"
-        rel="noopener noreferrer">
+    <a href="https://www.instagram.com/artbyelda/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="contact-link magnetic">
         Instagram ↗
     </a>
 
@@ -713,59 +732,60 @@
 </main>
 
 
-<!-- LIGHTBOX -->
+
+<!-- ================= LIGHTBOX ================= -->
 
 <div id="lightbox" class="lightbox">
 
-    <button
-        class="close"
-        onclick="closeArt()">
-        ×
-    </button>
+    <div class="lightbox-paint"></div>
 
-    <img
-        id="lightboxImage"
-        src=""
-        alt="Artwork">
+    <button class="close" onclick="closeArt()">×</button>
 
-    <div class="lightbox-info">
+    <div class="lightbox-content">
 
-        <div>
-            <h3 id="lightboxTitle"></h3>
-            <span id="lightboxPrice"></span>
+        <div class="lightbox-image-wrap">
+            <img id="lightboxImage" src="" alt="Artwork">
         </div>
 
-        <a
-            id="lightboxDM"
-            href="https://ig.me/m/artbyelda"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-sq="Pyet për këtë punim →"
-            data-en="Ask about this piece →">
-            Pyet për këtë punim →
-        </a>
+        <div class="lightbox-info">
+
+            <div>
+                <span class="lightbox-label">ARTWORK</span>
+                <h3 id="lightboxTitle"></h3>
+                <span id="lightboxPrice"></span>
+            </div>
+
+            <a id="lightboxDM"
+               href="https://ig.me/m/artbyelda"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="lightbox-button"
+               data-sq="Pyet për këtë punim →"
+               data-en="Ask about this piece →">
+                Pyet për këtë punim →
+            </a>
+
+        </div>
 
     </div>
 
 </div>
 
 
+
 <footer>
 
     <span>Art by Elda</span>
 
-    <a
-        href="https://www.instagram.com/artbyelda/"
-        target="_blank"
-        rel="noopener noreferrer">
+    <a href="https://www.instagram.com/artbyelda/"
+       target="_blank"
+       rel="noopener noreferrer">
         @artbyelda
     </a>
 
     <span>© 2026</span>
 
 </footer>
-    <div class="brush-divider brush-one"></div>
-<div class="brush-divider brush-two"></div>
 
 
 <script src="script.js"></script>
