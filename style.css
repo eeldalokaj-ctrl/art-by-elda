@@ -1712,3 +1712,186 @@ body::before {
     }
 
 }
+/* =====================================================
+   CINEMATIC ART VIEWER
+===================================================== */
+
+.gallery-viewer {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(55,75,78,.94),
+            rgba(20,32,35,.98)
+        );
+
+    backdrop-filter: blur(15px);
+
+    opacity: 0;
+
+    transition: opacity .4s ease;
+}
+
+.gallery-viewer.active {
+    opacity: 1;
+}
+
+
+.gallery-viewer-content {
+    max-width: 1100px;
+    width: 100%;
+
+    transform:
+        translateY(35px)
+        scale(.96);
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.gallery-viewer.active .gallery-viewer-content {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+.gallery-viewer img {
+    display: block;
+
+    width: 100%;
+    max-height: 78vh;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.35);
+}
+
+
+.gallery-viewer-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    padding-top: 18px;
+
+    color: white;
+}
+
+
+.gallery-viewer-caption h3 {
+    margin: 0;
+
+    font-size: 15px;
+
+    font-weight: 400;
+}
+
+
+.gallery-viewer-caption span {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    opacity: .55;
+}
+
+
+.gallery-viewer-close {
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    border: 0;
+
+    background: none;
+
+    color: white;
+
+    font-size: 40px;
+
+    font-weight: 200;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease;
+}
+
+.gallery-viewer-close:hover {
+    transform: rotate(90deg);
+    opacity: .6;
+}
+
+
+/* MOUSE LIGHT */
+
+.mouse-glow {
+    position: fixed;
+
+    width: 180px;
+    height: 180px;
+
+    transform: translate(-50%, -50%);
+
+    pointer-events: none;
+
+    z-index: 9998;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.18),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    transition:
+        left .08s linear,
+        top .08s linear;
+}
+
+
+@media (max-width: 700px) {
+
+    .gallery-viewer {
+        padding: 18px;
+    }
+
+    .gallery-viewer img {
+        max-height: 75vh;
+    }
+
+    .gallery-viewer-caption {
+        display: block;
+    }
+
+    .gallery-viewer-caption span {
+        display: block;
+        margin-top: 7px;
+    }
+
+    .gallery-viewer-close {
+        top: 12px;
+        right: 18px;
+    }
+
+}
